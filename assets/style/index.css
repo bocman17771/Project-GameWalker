@@ -3,6 +3,7 @@
 }
 .buttonsBlock{
   justify-content: center;
+  margin-bottom: auto;
 }
 .buttonsBlock__inner{
   flex-direction: column;
@@ -10,4 +11,18 @@
 }
 .buttonsBlock__center{
   justify-content: space-between;
+}
+
+.container{
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.wrapperCircle {
+  position: relative;
+  width: 50%;
+  height: 300px;
+  margin: auto;
+  border: solid 1px olivedrab;
 }

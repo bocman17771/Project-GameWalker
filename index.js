@@ -11,7 +11,7 @@ class Traffic extends Walker{
     this.movingPosition = options.top
     this.$el.style.padding = options.padding + 'px'
     this.$el.style.border =  options.border
-    this.$el.style.border =  options.border
+    this.$el.style.borderRadius =  options.borderRadius + '%'
     this.$el.style.position = options.position
     this.$el.style.left = this.$el.style.top = this.movingPosition + 'px'
   }
@@ -30,6 +30,7 @@ const style = new Traffic({
   selector: '.js-circle',
   padding: 15 ,
   border: 'solid orange 1px',
+  borderRadius: 100,
   position: 'absolute',
   top: 100,
 })
