@@ -1,0 +1,13 @@
+.buttonsBlock, .buttonsBlock__inner, .buttonsBlock__center{
+  display: flex;
+}
+.buttonsBlock{
+  justify-content: center;
+}
+.buttonsBlock__inner{
+  flex-direction: column;
+  align-items: center;
+}
+.buttonsBlock__center{
+  justify-content: space-between;
+}
