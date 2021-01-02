@@ -1,3 +1,6 @@
+*{
+  margin: 0;
+}
 .buttonsBlock, .buttonsBlock__inner, .buttonsBlock__center{
   display: flex;
 }

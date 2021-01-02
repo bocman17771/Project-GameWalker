@@ -1,48 +1,62 @@
-// Pressing raises an event
+// Change target position
 
-let quantity = style.movingPosition
+let quantityHorizontal = style.staticPosition
+let quantityVertical = style.staticPosition
 const btnLeft = document.querySelector('.js-button_left')
 const btnRight = document.querySelector('.js-button_right')
-const btnTop = document.querySelector('.js-button_top')
-const btnBottom = document.querySelector('.js-button_bottom')
+const btnUp = document.querySelector('.js-button_up')
+const btnDown = document.querySelector('.js-button_down')
 
+// Button mouse event
 window.addEventListener('click', event => {
-  // Left
   if(event.target === btnLeft){
-    stepPrev()
+    stepPrev('ArrowLeft')
   }
-  // Right
   if(event.target === btnRight){
-    stepNext()
+    stepNext('ArrowRight')
   }
-  console.log(event)
+  if(event.target === btnUp){
+    stepPrev('ArrowUp')
+  }
+  if(event.target === btnDown){
+    stepNext('ArrowDown')
+  }
 })
 
+// Button arrow
 window.addEventListener('keydown', event => {
-  // console.log(window.innerWidth)
-  if(event.key === 'ArrowLeft'){
-    stepPrev()
+  if(event.key === 'ArrowUp' || 'ArrowLeft'){
+    stepPrev(event.key)
   }
-  if(event.key === 'ArrowRight'){
-    stepNext()
+  if(event.key === 'ArrowRight' || 'ArrowDown'){
+    stepNext(event.key)
   }
-  if(event.key === 'ArrowUp'){
-    stepPrev()
-  }
-  // if(event.key === 'ArrowLeft'){
-  //   stepPrev()
-  // }
-  console.log(event.key)
 })
 
-function stepNext () {
-  quantity += 15
-  style.changeOfPosition(quantity)
-}
-function stepPrev () {
-  if(quantity < 15 ){
-    return
+function stepNext (arrow) {
+  if(arrow === 'ArrowRight'){
+    quantityHorizontal += 15
+    style.changeOfPositionHorizontal(quantityHorizontal)
   }
-  quantity -= 15
-  style.changeOfPosition(quantity)
+  if(arrow === 'ArrowDown'){
+    quantityVertical += 15
+    style.changeOfPositionVertical(quantityVertical)
+  }
+}
+
+function stepPrev (arrow) {
+  if(arrow === 'ArrowLeft'){
+    if(quantityHorizontal < 15 ){
+      return
+    }
+    quantityHorizontal -= 15
+    style.changeOfPositionHorizontal(quantityHorizontal)
+  }
+  if(arrow === 'ArrowUp'){
+    if(quantityVertical < 15 ){
+      return
+    }
+    quantityVertical -= 15
+    style.changeOfPositionVertical(quantityVertical)
+  }
 }
