@@ -17,11 +17,7 @@ class Traffic extends Walker{
   }
   
   changeOfPosition(num){
-    if (num < 10) {
-      return 
-    }
     this.$el.style.left = num + 'px'
-    console.log(style)
   }
 
 }
