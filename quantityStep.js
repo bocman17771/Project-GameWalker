@@ -2,6 +2,8 @@
 
 let quantityHorizontal = style.staticPosition
 let quantityVertical = style.staticPosition
+const frameHeight = document.querySelector('.wrapperCircle').clientHeight
+const frameWidth = document.querySelector('.wrapperCircle').clientWidth
 const btnLeft = document.querySelector('.js-button_left')
 const btnRight = document.querySelector('.js-button_right')
 const btnUp = document.querySelector('.js-button_up')
@@ -35,10 +37,16 @@ window.addEventListener('keydown', event => {
 
 function stepNext (arrow) {
   if(arrow === 'ArrowRight'){
+    if(quantityHorizontal >= frameWidth){
+      return
+    }
     quantityHorizontal += 15
     style.changeOfPositionHorizontal(quantityHorizontal)
   }
   if(arrow === 'ArrowDown'){
+    if(quantityVertical >= frameHeight){
+      return
+    }
     quantityVertical += 15
     style.changeOfPositionVertical(quantityVertical)
   }
@@ -46,14 +54,14 @@ function stepNext (arrow) {
 
 function stepPrev (arrow) {
   if(arrow === 'ArrowLeft'){
-    if(quantityHorizontal < 15 ){
+    if(quantityHorizontal < 15){
       return
     }
     quantityHorizontal -= 15
     style.changeOfPositionHorizontal(quantityHorizontal)
   }
   if(arrow === 'ArrowUp'){
-    if(quantityVertical < 15 ){
+    if(quantityVertical < 15){
       return
     }
     quantityVertical -= 15
