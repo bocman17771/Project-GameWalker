@@ -5,13 +5,11 @@ class Target {
 }
 
 class Style extends Target{
-  
   constructor(options){
     super(options.selector)
     this.staticPosition = options.staticPosition
     this.$el.style.padding = options.padding + 'px'
-    this.$el.style.border =  options.border
-    this.$el.style.borderRadius =  options.borderRadius + '%'
+    this.$el.style.outline = options.outline
     this.$el.style.position = options.position
     this.$el.style.left = this.$el.style.top = this.staticPosition + 'px'
   }
@@ -26,8 +24,7 @@ class Style extends Target{
 const style = new Style({
   selector: '.js-circle',
   padding: 15 ,
-  border: 'solid orange 1px',
-  borderRadius: 100,
+  outline: 'solid orange 1px',
   position: 'absolute',
   staticPosition: 100,
 })
