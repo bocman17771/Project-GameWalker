@@ -1,10 +1,4 @@
-class Target {
-  constructor(options){
-    this.$el = document.querySelector(options)
-  }
-}
-
-class Style extends Target{
+class Target extends Element{
   constructor(options){
     super(options.selector)
     this.staticPosition = options.staticPosition
@@ -21,11 +15,10 @@ class Style extends Target{
   }
 }
 
-const style = new Style({
+const styleTarget = new Target({
   selector: '.js-circle',
   padding: 15 ,
   outline: 'solid orange 1px',
   position: 'absolute',
   staticPosition: 100,
 })
-

@@ -1,7 +1,7 @@
 // Change target position
 
-let quantityHorizontal = style.staticPosition
-let quantityVertical = style.staticPosition
+let quantityHorizontal = styleTarget.staticPosition
+let quantityVertical = styleTarget.staticPosition
 const frameHeight = document.querySelector('.wrapperCircle').clientHeight
 const frameWidth = document.querySelector('.wrapperCircle').clientWidth
 const targetWidth = document.querySelector('.js-circle').clientWidth
@@ -43,14 +43,14 @@ function stepNext (arrow) {
       return
     }
     quantityHorizontal += 10
-    style.changeOfPositionHorizontal(quantityHorizontal)
+    styleTarget.changeOfPositionHorizontal(quantityHorizontal)
   }
   if(arrow === 'ArrowDown'){
     if(quantityVertical >= frameHeight - targetHeight){
       return
     }
     quantityVertical += 10
-    style.changeOfPositionVertical(quantityVertical)
+    styleTarget.changeOfPositionVertical(quantityVertical)
   }
 }
 
@@ -60,13 +60,13 @@ function stepPrev (arrow) {
       return
     }
     quantityHorizontal -= 10
-    style.changeOfPositionHorizontal(quantityHorizontal)
+    styleTarget.changeOfPositionHorizontal(quantityHorizontal)
   }
   if(arrow === 'ArrowUp'){
     if(quantityVertical <= 0){
       return
     }
     quantityVertical -= 10
-    style.changeOfPositionVertical(quantityVertical)
+    styleTarget.changeOfPositionVertical(quantityVertical)
   }
 }
