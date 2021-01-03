@@ -1,29 +1,8 @@
-
-
-class Walker extends Element{
-  constructor(options){
-    super(options.selector)
-    this.staticPosition = options.staticPosition
-    this.$el.style.color = options.color
-    this.$el.style.padding = options.padding + 'px'
-    this.$el.style.outline = options.outline
-    this.$el.style.position = options.position
-    this.$el.style.left = this.$el.style.top = this.staticPosition + 'px'
-  }
-  changeOfPositionHorizontal(num){
-    this.$el.style.left = num + 'px'
-  }
-  changeOfPositionVertical(num){
-    this.$el.style.top = num + 'px'
-  }
-}
-
-const styleWalker = new Walker({
+const styleWalker = new Style({
   selector: '.js-walker',
   padding: 30,
   outline: 'solid orange 1px',
   position: 'absolute',
-  staticPosition: 15,
+  staticPosition: 10,
+  transition: 0.3,
 })
-
-console.log(styleWalker.changeOfPositionHorizontal)
