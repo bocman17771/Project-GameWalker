@@ -4,5 +4,5 @@ const styleWalker = new Style({
   outline: 'solid orange 1px',
   position: 'absolute',
   staticPosition: 10,
-  transition: 0.3,
+  // transition: 0.3,
 })

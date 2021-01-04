@@ -1,6 +1,6 @@
 const walker = styleWalker
+const walkerWidth = walker.$el.clientWidths
 const btnStart = document.querySelector('.js-button_start')
-const walkerWidth = document.querySelector('.js-walker').clientWidth
 
 btnStart.onclick = () => startWalker()
 
@@ -11,7 +11,8 @@ function startWalker() {
     return
   }
   step += 10
-  console.log(step)
   walker.changeOfPositionHorizontal(step)
-  setTimeout(() => startWalker(), 500)
+  setTimeout(() => startWalker(), 1000)
 }
+
+

@@ -12,7 +12,7 @@ class Style extends Element{
     this.$el.style.outline = options.outline
     this.$el.style.position = options.position
     this.$el.style.left = this.$el.style.top = this.staticPosition + 'px'
-    // this.$el.style.transition = options.transition + 's'
+    this.$el.style.transition = options.transition + 's'
   }
   changeOfPositionHorizontal(num){
     this.$el.style.left = num + 'px'

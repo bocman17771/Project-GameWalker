@@ -2,10 +2,10 @@
 
 let quantityHorizontal = styleTarget.staticPosition
 let quantityVertical = styleTarget.staticPosition
+const targetWidth = styleTarget.$el.clientWidth
+const targetHeight = styleTarget.$el.clientHeight
 const frameHeight = document.querySelector('.wrapperCircle').clientHeight
 const frameWidth = document.querySelector('.wrapperCircle').clientWidth
-const targetWidth = document.querySelector('.js-circle').clientWidth
-const targetHeight = document.querySelector('.js-circle').clientHeight
 const btnLeft = document.querySelector('.js-button_left')
 const btnRight = document.querySelector('.js-button_right')
 const btnUp = document.querySelector('.js-button_up')
