@@ -4,5 +4,6 @@ const styleWalker = new Style({
   outline: 'solid orange 1px',
   position: 'absolute',
   staticPosition: 10,
-  // transition: 0.3,
 })
+const walker = styleWalker
+const walkerWidth = walker.$el.clientWidth

@@ -21,11 +21,3 @@
   min-height: 100vh;
   margin: 0 auto;
 }
-
-.wrapperCircle {
-  position: relative;
-  width: 50%;
-  height: 300px;
-  margin: auto;
-  outline: solid 1px olivedrab;
-}

@@ -5,3 +5,6 @@ const styleTarget = new Style({
   position: 'absolute',
   staticPosition: 100,
 })
+
+const targetWidth = styleTarget.$el.clientWidth
+const targetHeight = styleTarget.$el.clientHeight
