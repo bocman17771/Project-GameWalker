@@ -1,11 +1,13 @@
 // Coordinate designation
 const $btnShot = document.querySelector('.js-button_shot')
 
-$btnShot.onclick = mergerCoords()
+$btnShot.onclick = () => mergerCoords({
+  target: styleTarget.$el, 
+  walker: styleWalker.$el
+})
 
 window.addEventListener('keydown', event => {
   if(event.code === 'Space'){
-    console.log('space')
     mergerCoords({
       target: styleTarget.$el, 
       walker: styleWalker.$el
@@ -19,10 +21,10 @@ function getCoords(elem) {
 }
 
 function mergerCoords(element){ 
-  // const sumOne = getCoords(element.target)
-  // const sumTwo = getCoords(element.walker)
-  // if (sumOne === sumTwo){
-  //   return console.log(true)
-  // }
-  console.log(element)
+  const sumOne = getCoords(element.target)
+  const sumTwo = getCoords(element.walker)
+  if (sumOne === sumTwo){
+    return console.log(true)
+  }
+  console.log(false)
 }
