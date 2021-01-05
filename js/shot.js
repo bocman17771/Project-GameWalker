@@ -2,7 +2,9 @@
 
 import {styleTarget} from './Target.js'
 import {styleWalker} from './Walker.js'
+import {styleField} from './Field.js'
 
+const field = styleField.$el
 const $btnShot = document.querySelector('.js-button_shot')
 
 $btnShot.onclick = () => mergerCoords({
@@ -24,11 +26,17 @@ function getCoords(elem) {
   return box.top + box.left
 }
 
+function fieldChangeBackground(color = '') {
+  field.style.background = color
+}
+ 
 function mergerCoords(element){ 
+  const background = fieldChangeBackground
   const sumOne = getCoords(element.target)
   const sumTwo = getCoords(element.walker)
   if (sumOne === sumTwo){
-    return console.log(true)
+    return background('green')
   }
-  console.log(false)
+  background('red')
+  setTimeout(() => background(), 1000)
 }
