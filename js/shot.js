@@ -1,3 +1,7 @@
+import {styleTarget} from './Target.js'
+import {styleWalker} from './Walker.js'
+
+
 // Coordinate designation
 const $btnShot = document.querySelector('.js-button_shot')
 

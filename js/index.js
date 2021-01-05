@@ -1,0 +1,7 @@
+import './Element.js'
+import './Field.js'
+import './Walker.js'
+import './Target.js'
+import './targetManagement.js'
+import './startGame.js'
+import './shot.js'

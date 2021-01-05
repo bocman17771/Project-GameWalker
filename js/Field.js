@@ -1,4 +1,6 @@
-const styleField = new Style({
+import {Style} from './Element.js'
+
+export const styleField = new Style({
   selector: '.wrapperCircle',
   width: '50%',
   height: '300px',
@@ -6,6 +8,3 @@ const styleField = new Style({
   position: 'relative',
   margin: 'auto',
 })
-
-const frameHeight = styleField.$el.clientHeight
-const frameWidth = styleField.$el.clientWidth

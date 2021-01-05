@@ -3,7 +3,7 @@ class Element {
     this.$el = document.querySelector(options)
   }
 }
-class Style extends Element{
+export class Style extends Element{
   constructor(options){
     super(options.selector)
     this.staticPosition = options.staticPosition

@@ -1,4 +1,11 @@
 // Change target position
+import {styleTarget} from './Target.js'
+import {styleField} from './Field.js'
+const frameHeight = styleField.$el.clientHeight
+const frameWidth = styleField.$el.clientWidth
+
+const targetWidth = styleTarget.$el.clientWidth
+const targetHeight = styleTarget.$el.clientHeight
 
 let quantityHorizontal = styleTarget.staticPosition
 let quantityVertical = styleTarget.staticPosition
@@ -6,7 +13,7 @@ const $btnLeft = document.querySelector('.js-button_left')
 const $btnRight = document.querySelector('.js-button_right')
 const $btnUp = document.querySelector('.js-button_up')
 const $btnDown = document.querySelector('.js-button_down')
-
+console.log(targetHeight)
 // Button mouse event
 window.addEventListener('click', event => {
   if(event.target === $btnLeft){
