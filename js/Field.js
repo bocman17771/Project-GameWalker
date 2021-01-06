@@ -1,7 +1,7 @@
 import {Style} from './Element.js'
 
 export const styleField = new Style({
-  selector: '.wrapperCircle',
+  selector: '.js-field',
   width: '50%',
   height: '300px',
   outline: 'solid olivedrab 1px',
