@@ -2,6 +2,7 @@
 
 import {styleField} from './Field.js'
 import {styleWalker} from './Walker.js'
+import {stepFinish} from './shot.js'
 const walker = styleWalker
 const walkerWidth = walker.$el.clientWidth
 const fieldWidth = styleField.$el.clientWidth
@@ -14,15 +15,16 @@ document.addEventListener('keydown', event => {
     startWalker()
   }
 }) 
-// const r = false
-let step = 0
-export function startWalker(val) {
-  if(step >= fieldWidth - walkerWidth || val === false){
+
+export let step = 0
+function startWalker() {
+  if(step >= fieldWidth - walkerWidth || stepFinish === true){
+    walker.changeOfPositionHorizontal(walker.staticPosition)
     return
   }
-  console.log(step)
   step += 10
   walker.changeOfPositionHorizontal(step)
   setTimeout(() => startWalker(), 1000)
 }
+
 

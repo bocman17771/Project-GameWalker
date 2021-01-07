@@ -5,6 +5,7 @@ import {styleWalker} from './Walker.js'
 import {styleField} from './Field.js'
 const field = styleField.$el
 const $btnShot = document.querySelector('.js-button_shot')
+
 $btnShot.onclick = () => mergerCoords({
   target: styleTarget.$el, 
   walker: styleWalker.$el
@@ -28,6 +29,7 @@ function fieldChangeBackground(color) {
   field.style.background = color
 }
 
+export let stepFinish = false
 function mergerCoords(element){ 
   const background = fieldChangeBackground
   const sumOne = getCoords(element.target)
@@ -39,6 +41,7 @@ function mergerCoords(element){
     win.innerHTML = 'Win!'
     field.append(win)
     background('green')
+    stepFinish = true
     setTimeout(() => {
       win.remove()
       background('')

@@ -1,7 +1,6 @@
 // Change target position
 import {styleTarget} from './Target.js'
 import {styleField} from './Field.js'
-
 const fieldHeight = styleField.$el.clientHeight
 const fieldWidth = styleField.$el.clientWidth
 const targetWidth = styleTarget.$el.clientWidth
