@@ -2,42 +2,37 @@
 
 import {styleField} from './Field.js'
 import {styleWalker} from './Walker.js'
-const walker = styleWalker
-const walkerWidth = walker.$el.clientWidth
-const fieldWidth = styleField.$el.clientWidth
+
 const $btnStart = document.querySelector('.js-button_start')
-
 $btnStart.onclick = () => startWalker()
-
-document.addEventListener('keydown', event => {
-  if(event.code === 'NumpadEnter') {
-    startWalker()
-  }
-}) 
 
 let finish = false
 
-export let step = 0
-function startWalker() {
-  if(finish === true){
-    walker.changeOfPositionHorizontal(walker.staticPosition)
-    finish = false
-    step = 0
-    return
+export function startWalker() {
+  let step = 0
+  start()
+  function start() {
+    const walkerWidth = styleWalker.$el.clientWidth
+    const fieldWidth = styleField.$el.clientWidth
+    if(finish === true){
+      styleWalker.changeOfPositionHorizontal(styleWalker.staticPosition)
+      finish = false
+      step = 0
+      return
+    }
+    if(step >= fieldWidth - walkerWidth){
+      step = 0
+    }
+    step += 10
+    styleWalker.changeOfPositionHorizontal(step)
+    setTimeout(() => start(), 200)
   }
-  if(step >= fieldWidth - walkerWidth){
-    step = 0
-  }
-  step += 10
-  walker.changeOfPositionHorizontal(step)
-  setTimeout(() => startWalker(), 200)
 }
 
 
-// 
+// Shot
 
 import {styleTarget} from './Target.js'
-const field = styleField.$el
 const $btnShot = document.querySelector('.js-button_shot')
 
 $btnShot.onclick = () => mergerCoords({
@@ -60,24 +55,24 @@ function getCoords(elem) {
 }
 
 function fieldChangeBackground(color) {
+  const field = styleField.$el
   field.style.background = color
 }
 
-// export let stepFinish = false
 function mergerCoords(element){ 
   const background = fieldChangeBackground
   const targetCoords = getCoords(element.target)
   const walkerCoords = getCoords(element.walker)
   if (targetCoords === walkerCoords){
     const field = styleField.$el
-    const win = document.createElement('span')
-    win.className = 'textWin'
-    win.innerHTML = 'Win!'
-    field.append(win)
+    const textWin = document.createElement('span')
+    textWin.className = 'textWin'
+    textWin.innerHTML = 'Win!'
+    field.append(textWin)
     background('green')
     finish = true
     setTimeout(() => {
-      win.remove()
+      textWin.remove()
       background('')
     }, 1000) 
     return
