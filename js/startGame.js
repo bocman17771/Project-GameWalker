@@ -26,7 +26,6 @@ function startWalker() {
     return
   }
   if(step >= fieldWidth - walkerWidth){
-    // walker.changeOfPositionHorizontal(walker.staticPosition)
     step = 0
   }
   step += 10
