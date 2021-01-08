@@ -8,9 +8,13 @@ $btnStart.onclick = () => startWalker()
 
 let finish = false
 
+// Starts game
 export function startWalker() {
   let step = 0
   start()
+  function getRandomInt(max) {
+    console.log(Math.floor(Math.random() * Math.floor(max))) 
+  }
   function start() {
     const walkerWidth = styleWalker.$el.clientWidth
     const fieldWidth = styleField.$el.clientWidth
@@ -54,29 +58,42 @@ function getCoords(elem) {
   return box.top + box.left
 }
 
-function fieldChangeBackground(color) {
-  const field = styleField.$el
-  field.style.background = color
+function changeBackground(element, color) {
+  element.style.background = color
+}
+
+// Сreating a new node in DOM
+function createNode(option){
+  const element = option.element
+  const beforeThisElement = option.beforeThisElement
+  const newClassElement = option.classElement
+  const newTextInnerElement = option.textInnerElement
+  element.className = newClassElement
+  element.innerHTML = newTextInnerElement
+  beforeThisElement.append(element)
 }
 
 function mergerCoords(element){ 
-  const background = fieldChangeBackground
+  const background = changeBackground
+  const field = styleField.$el
   const targetCoords = getCoords(element.target)
   const walkerCoords = getCoords(element.walker)
   if (targetCoords === walkerCoords){
-    const field = styleField.$el
     const textWin = document.createElement('span')
-    textWin.className = 'textWin'
-    textWin.innerHTML = 'Win!'
-    field.append(textWin)
-    background('green')
+    createNode({
+      element: textWin,
+      textInnerElement: 'Win!!!',
+      classElement: 'textWin',
+      beforeThisElement: field
+    })
+    background(field, 'green')
     finish = true
     setTimeout(() => {
       textWin.remove()
-      background('')
+      background(field, '')
     }, 1000) 
     return
   }
-  background('red')
-  setTimeout(() => background(''), 500)
+  background(field, 'red')
+  setTimeout(() => background(field, ''), 500)
 }
