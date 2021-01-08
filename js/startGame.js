@@ -7,17 +7,18 @@ const $btnStart = document.querySelector('.js-button_start')
 $btnStart.onclick = () => startWalker()
 
 let finish = false
-
 // Starts game
 export function startWalker() {
+  const quantity = 30
   let step = 0
   start()
-  function getRandomInt(max) {
-    console.log(Math.floor(Math.random() * Math.floor(max))) 
-  }
+  
   function start() {
     const walkerWidth = styleWalker.$el.clientWidth
     const fieldWidth = styleField.$el.clientWidth
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max))
+    }
     if(finish === true){
       styleWalker.changeOfPositionHorizontal(styleWalker.staticPosition)
       finish = false
@@ -27,8 +28,28 @@ export function startWalker() {
     if(step >= fieldWidth - walkerWidth){
       step = 0
     }
-    step += 10
-    styleWalker.changeOfPositionHorizontal(step)
+    if(step <= 0){
+      step = 30
+    }
+
+    // getRandomInt(6)
+    if(getRandomInt(4) === 0){
+      step += quantity
+      styleWalker.changeOfPositionHorizontal(step)
+    }
+    if(getRandomInt(4) === 1){
+      step -= quantity
+      styleWalker.changeOfPositionHorizontal(step)
+    }
+    if(getRandomInt(4) === 2){
+      step += quantity
+      styleWalker.changeOfPositionVertical(step)
+    }
+    if(getRandomInt(4) === 3){
+      step -= quantity
+      styleWalker.changeOfPositionVertical(step)
+    }
+    
     setTimeout(() => start(), 200)
   }
 }
