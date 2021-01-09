@@ -5,7 +5,7 @@ import {styleWalker} from './Walker.js'
 
 const $btnStart = document.querySelector('.js-button_start')
 $btnStart.onclick = () => startWalker()
-let level = 10
+let level = 1
 let finish = false
 
 // Starts game
@@ -17,7 +17,7 @@ export function startWalker() {
   const quantity = 30
   let levelAp = level * 100 - 100
   let step = styleWalker.staticPosition
-
+  console.log(levelAp)
   function checkOnTheRandom(random) {
     if(random === 0){
       step += quantity
