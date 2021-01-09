@@ -10,27 +10,19 @@ let finish = false
 
 // Starts game
 export function startWalker() {
+
   const walkerWidth = styleWalker.$el.clientWidth
   const walkerHeight = styleWalker.$el.clientHeight
   const fieldWidth = styleField.$el.clientWidth
   const fieldHeight = styleField.$el.clientHeight
   const quantity = 30
-
+  
   let levelUp = 100
   let getLevelUp = levelUp
   let level = getLevelUp / 100
   
   let step = styleWalker.staticPosition
   console.log(level)
-  function checkOnTheFinishGame(finish){
-    if(this.finish === true){
-      styleWalker.changeOfPositionHorizontal(styleWalker.staticPosition)
-      styleWalker.changeOfPositionVertical(styleWalker.staticPosition)
-      finish = false
-      step = 0
-      return
-    }
-  }
 
   function checkOnTheRandom(random) {
     if(random === 0){
@@ -53,21 +45,28 @@ export function startWalker() {
 
   function checkOnTheBrink() {
     if(step >= fieldWidth - walkerWidth){
-      step -= quantity
+      step -= quantity + walkerWidth
     }
     if(step <= 0){
-      step += quantity
+      step += quantity + walkerWidth
     }
     if(step >= fieldHeight - walkerHeight){
-      step -= quantity
+      step -= quantity + walkerWidth
     }
   }
 
   function start() {
-    checkOnTheFinishGame(finish)
+    if(finish){
+      styleWalker.changeOfPositionHorizontal(styleWalker.staticPosition)
+      styleWalker.changeOfPositionVertical(styleWalker.staticPosition)
+      finish = false
+      step = 0
+      return
+    }
+    
     checkOnTheRandom(getRandomInt(4))
     checkOnTheBrink()
-    setTimeout(() => start(), 1000)
+    setTimeout(() => start(), 200)
   }
 
   start()
