@@ -5,7 +5,7 @@ import {styleWalker} from './Walker.js'
 
 const $btnStart = document.querySelector('.js-button_start')
 $btnStart.onclick = () => startWalker()
-let levelUp = 1
+let level = 10
 let finish = false
 
 // Starts game
@@ -15,7 +15,7 @@ export function startWalker() {
   const fieldWidth = styleField.$el.clientWidth
   const fieldHeight = styleField.$el.clientHeight
   const quantity = 30
-  let level = levelUp * 100 - 100
+  let levelAp = level * 100 - 100
   let step = styleWalker.staticPosition
 
   function checkOnTheRandom(random) {
@@ -59,7 +59,7 @@ export function startWalker() {
     }
     checkOnTheRandom(getRandomInt(4))
     checkOnTheBrink()
-    setTimeout(() => start(), 1000 - level)
+    setTimeout(() => start(), 1000 - levelAp)
   }
 
   start()
@@ -120,7 +120,7 @@ function mergerCoords(element){
   const walkerCoords = getCoords(element.walker)
   if (targetCoords === walkerCoords){
     const textWin = document.createElement('span')
-    levelUp++
+    level++
     createNode({
       element: textWin,
       textInnerElement: 'Win!!!',
@@ -129,7 +129,7 @@ function mergerCoords(element){
     })
     changeNode({
       element: document.querySelector('.js-thisLvl'),
-      textInnerElement: levelUp
+      textInnerElement: level
     })
     background(field, 'green')
     finish = true
