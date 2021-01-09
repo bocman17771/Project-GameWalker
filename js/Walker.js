@@ -5,5 +5,5 @@ export const styleWalker = new Style({
   padding: 15,
   outline: 'solid orange 1px',
   position: 'absolute',
-  staticPosition: 10,
+  staticPosition: 0,
 })
