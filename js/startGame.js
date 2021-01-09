@@ -22,8 +22,8 @@ export function startWalker() {
   
   let step = styleWalker.staticPosition
   console.log(level)
-  function checkOnTheFinishGame(){
-    if(finish === true){
+  function checkOnTheFinishGame(finish){
+    if(this.finish === true){
       styleWalker.changeOfPositionHorizontal(styleWalker.staticPosition)
       styleWalker.changeOfPositionVertical(styleWalker.staticPosition)
       finish = false
@@ -64,10 +64,10 @@ export function startWalker() {
   }
 
   function start() {
-    checkOnTheFinishGame()
+    checkOnTheFinishGame(finish)
     checkOnTheRandom(getRandomInt(4))
     checkOnTheBrink()
-    setTimeout(() => start(), 200)
+    setTimeout(() => start(), 1000)
   }
 
   start()
