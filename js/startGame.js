@@ -1,4 +1,4 @@
-//  We hang the game launch event
+//  Overall game functionality
 
 import {styleField} from './Field.js'
 import {styleWalker} from './Walker.js'
