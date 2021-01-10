@@ -53,8 +53,8 @@ export function startWalker() {
       step = 0
       return
     }
-    checkOnTheRandom(getRandomInt(4))
     checkOnTheBrink()
+    checkOnTheRandom(getRandomInt(4))
     setTimeout(() => start(), 1000 - levelAp)
   }
   start()
