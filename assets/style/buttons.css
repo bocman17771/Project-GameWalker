@@ -19,7 +19,6 @@
   padding: 20px;
   border-radius: 100%;
   border: none;
-  
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70%;
@@ -34,7 +33,6 @@
   background-color: #007bff; 
   background-image: url('../img/svg/arrow.svg');
 }
- 
 .button_up{
   transform: rotate(-90deg);
 }
@@ -45,7 +43,6 @@
 .button_left{
   transform: rotate(-180deg);
 }
-
 .button_start{
   background-color:#28a745; 
   background-image: url('../img/svg/start.svg');

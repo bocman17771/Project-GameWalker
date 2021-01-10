@@ -1,0 +1,41 @@
+.subtitle_color_red{
+  color: #dc3545;
+}
+.textWin{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 30px;
+}
+.fatty{
+  font-size: x-large;
+  font-weight: 700;
+}
+.level{
+  width: 50%;
+  margin: auto;
+  text-align: end;
+  color: #17a2b8;
+}
+.content{
+  margin-bottom: 10px;
+  width: 70%;
+}
+.row{
+  margin-bottom: 20px;
+}
+.catalog__list{
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.catalog__list .button{
+  margin: 0;
+  margin-right: 10px;
+}
+.catalog__list .button:hover{
+  cursor: default;
+}
+

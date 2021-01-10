@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+}
+.title,.subtitle{
+  font-family: 'RobotoRegular';
+  color: #343a40;
+}
+.subtitle{
+  margin-bottom: 10px;
+}
+.title{
+  font-size: 50px;
+}
+.text{
+  font-family: 'RobotoRegular';
+  color: #343a40;
+}
+.container{
+  padding-left: 30px;
+  padding-right: 30px;
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: #f8f9fa;
+}
