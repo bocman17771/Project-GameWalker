@@ -35,3 +35,30 @@
 .subtitle_color_red{
   color: red;
 }
+
+.button{
+  padding: 15px;
+  border: none;
+  background-color: #007bff; 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+}
+.button:focus{
+  outline: none
+}
+.button_up,.button_left,.button_right,.button_down{
+  border-radius: 100%;
+  background-image: url('../img/svg/arrow.svg');
+
+}
+
+.button_up{
+  transform: rotate(-90deg);
+}
+.button_down{
+  transform: rotate(90deg);
+}
+.button_left{
+  transform: rotate(-180deg);
+}
