@@ -3,6 +3,7 @@
   margin: 0;
 }
 .container{
+  /* padding-top: 30px; */
   padding-left: 30px;
   padding-right: 30px;
   max-width: 1200px;
@@ -18,7 +19,6 @@
   color: #ffffff;
   font-size: 30px;
 }
-
 
 .title,.subtitle{
   color: #343a40;
@@ -41,4 +41,21 @@
 }
 .content{
   width: 70%;
+}
+.content .subtitle{
+  margin-bottom: 10px;
+}
+.row{
+  margin-bottom: 20px;
+}
+
+.catalog__list{
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.catalog__list .button{
+  margin: 0;
+  margin-right: 10px;
 }

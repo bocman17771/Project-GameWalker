@@ -19,7 +19,7 @@
   padding: 20px;
   border-radius: 100%;
   border: none;
-  background-color: #007bff; 
+  
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70%;
@@ -31,6 +31,7 @@
   cursor: pointer;
 }
 .button_up,.button_left,.button_right,.button_down{
+  background-color: #007bff; 
   background-image: url('../img/svg/arrow.svg');
 }
  
@@ -46,9 +47,11 @@
 }
 
 .button_start{
+  background-color:#28a745; 
   background-image: url('../img/svg/start.svg');
 }
 .button_shot{
+  background-color:#dc3545; 
   background-image: url('../img/svg/target.svg');
   margin: 20px;
 }
