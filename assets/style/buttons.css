@@ -1,0 +1,54 @@
+.buttonsBlock, .buttonsBlock__inner, .buttonsBlock__center{
+  display: flex;
+}
+.buttonsBlock{
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.buttonsBlock__inner{
+  flex-direction: column;
+  align-items: center;
+}
+.buttonsBlock__center{
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+}
+
+.button{
+  padding: 20px;
+  border-radius: 100%;
+  border: none;
+  background-color: #007bff; 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+}
+.button:focus{
+  outline: none
+}
+.button:hover{
+  cursor: pointer;
+}
+.button_up,.button_left,.button_right,.button_down{
+  background-image: url('../img/svg/arrow.svg');
+}
+ 
+.button_up{
+  transform: rotate(-90deg);
+}
+.button_down{
+  transform: rotate(90deg);
+  margin-bottom: 20px;
+}
+.button_left{
+  transform: rotate(-180deg);
+}
+
+.button_start{
+  background-image: url('../img/svg/start.svg');
+}
+.button_shot{
+  background-image: url('../img/svg/target.svg');
+  margin: 20px;
+}

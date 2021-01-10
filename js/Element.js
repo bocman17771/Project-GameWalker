@@ -8,8 +8,10 @@ export class Style extends Element{
     super(options.selector)
     this.staticPosition = options.staticPosition
     this.$el.style.color = options.color
+    this.$el.style.background = options.background
     this.$el.style.padding = options.padding + 'px'
     this.$el.style.margin = options.margin
+    this.$el.style.marginBottom = options.marginBottom
     this.$el.style.width = options.width
     this.$el.style.height = options.height
     this.$el.style.outline = options.outline

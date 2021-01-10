@@ -10,51 +10,59 @@
 
 <body>
   <div class="container">
-    <h1>Walker</h1>
+    <h1 class="title">Walker</h1>
     <h2 class="subtitle level">Level <span class="js-thisLvl">1</span></h2>
     <div class="js-field">
       <div class="js-walker"></div>
       <div class="js-target"></div>
     </div>
-    
+
     <div class="buttonsBlock">
       <div class="buttonsBlock__inner">
         <button type="button" class="button button_up js-button_up"></button>
         <div class="buttonsBlock__center">
           <button type="button" class="button button_left js-button_left"></button>
+          <button type="button" class="button button_shot js-button_shot"></button>
           <button type="button" class="button button_right js-button_right"></button>
         </div>
         <button type="button" class="button button_down js-button_down"></button>
-        <button type="button" class="button button_start js-button_start">Старт!</button>
-        <button type="button" class="button button_shot js-button_shot">Выстрел</button>
+        <button type="button" class="button button_start js-button_start"></button>
       </div>
     </div>
-    <h2 class="subtitle subtitle_color_red">Внимание!</h2>
-    <p class="text">
-      Игра находится в режиме разработки, имеются небольшие баги.
-      Крайне рекомендуется использовать в управлении только клавиатуру. 
-    </p>
-    <h2 class="subtitle">Описание.</h2>
-    <p class="text">
-      Суть игры walker состоит в том, 
-      что при запуске ходунок(красный квадрат) начинает двигаться по своей траектории, 
-      а игрок в свою очередь должен сбить этот ходунок. В игре 10 уровней. Чем больше уровень, тем больше скорость движения ходунка.
-    </p>
-    <h2 class="subtitle">Инструкция.</h2>
-    <p class="text">
-      Нажми на enter чтобы запустить игру.
-      С помощью стрелок на клавиатуре, совмести желтый квадрат с красным и нажми выстрел(пробел). 
-      После попадания по мишени, произойдет повышение уровня и игра будет ждать нового запуска,
-      нужно нажать "enter". И так до конца.
-    </p>
-    <ul>
-      <h2 class="subtitle">
-        Управление.
-      </h2>
-      <li>Старт = enter</li>
-      <li>Выстрел = space</li>
-      <li>Влево, вправо, вверх, вниз = стрелки в правой части клавиатуры</li>
-    </ul>
+    <div class="content">
+      <h2 class="subtitle subtitle_color_red">Внимание!</h2>
+      <p class="text">
+        Игра находится в режиме разработки, имеются небольшие баги.
+        Крайне рекомендуется использовать в управлении только клавиатуру.
+      </p>
+
+      <h2 class="subtitle">Описание.</h2>
+      <p class="text">
+        Суть игры walker состоит в том,
+        что при запуске ходунок(красный квадрат) начинает двигаться по своей траектории,
+        а игрок в свою очередь должен сбить этот ходунок. В игре 10 уровней. Чем больше уровень, тем больше скорость
+        движения ходунка.
+      </p>
+
+      <h2 class="subtitle">Инструкция.</h2>
+      <p class="text">
+        Нажми на enter чтобы запустить игру.
+        С помощью стрелок на клавиатуре, совмести желтый квадрат с красным и нажми выстрел(пробел).
+        После попадания по мишени, произойдет повышение уровня и игра будет ждать нового запуска,
+        нужно нажать "enter". И так до конца.
+      </p>
+
+      <ul>
+        <h2 class="subtitle">
+          Управление.
+        </h2>
+        <li class="text">Старт = enter</li>
+        <li class="text">Выстрел = space</li>
+        <li class="text">Влево, вправо, вверх, вниз = стрелки в правой части клавиатуры</li>
+      </ul>
+    </div>
+
+
   </div>
   <script type="module" src="js/index.js"></script>
 </body>

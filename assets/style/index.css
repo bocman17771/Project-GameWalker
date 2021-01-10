@@ -1,25 +1,14 @@
+@import './buttons.css';
 *{
   margin: 0;
 }
-.buttonsBlock, .buttonsBlock__inner, .buttonsBlock__center{
-  display: flex;
-}
-.buttonsBlock{
-  justify-content: center;
-  margin-bottom: auto;
-}
-.buttonsBlock__inner{
-  flex-direction: column;
-  align-items: center;
-}
-.buttonsBlock__center{
-  justify-content: space-between;
-}
-
 .container{
+  padding-left: 30px;
+  padding-right: 30px;
   max-width: 1200px;
   min-height: 100vh;
   margin: 0 auto;
+  background-color: #f8f9fa;
 }
 .textWin{
   position: absolute;
@@ -29,36 +18,27 @@
   color: #ffffff;
   font-size: 30px;
 }
-.level{
-  text-align: end;
+
+
+.title,.subtitle{
+  color: #343a40;
 }
+.title{
+  font-size: 50px;
+}
+.text{
+  color: #343a40;
+}
+
 .subtitle_color_red{
-  color: red;
+  color: #dc3545;
 }
-
-.button{
-  padding: 15px;
-  border: none;
-  background-color: #007bff; 
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 70%;
+.level{
+  width: 50%;
+  margin: auto;
+  text-align: end;
+  color: #17a2b8;
 }
-.button:focus{
-  outline: none
-}
-.button_up,.button_left,.button_right,.button_down{
-  border-radius: 100%;
-  background-image: url('../img/svg/arrow.svg');
-
-}
-
-.button_up{
-  transform: rotate(-90deg);
-}
-.button_down{
-  transform: rotate(90deg);
-}
-.button_left{
-  transform: rotate(-180deg);
+.content{
+  width: 70%;
 }
