@@ -2,9 +2,8 @@
 
 import {styleField} from './Field.js'
 import {styleWalker} from './Walker.js'
+import {getRandomInt, getCoords, changeBackground, createNode, changeNode} from './mixin.js'
 
-const $btnStart = document.querySelector('.js-button_start')
-$btnStart.onclick = () => startWalker()
 let level = 1
 let finish = false
 
@@ -17,7 +16,6 @@ export function startWalker() {
   const quantity = 30
   let levelAp = level * 100 - 100
   let step = styleWalker.staticPosition
-  console.log(levelAp)
   function checkOnTheRandom(random) {
     if(random === 0){
       step += quantity
@@ -36,7 +34,6 @@ export function startWalker() {
       styleWalker.changeOfPositionVertical(step)
     }
   }
-
   function checkOnTheBrink() {
     if(step >= fieldWidth - walkerWidth){
       step -= quantity + walkerWidth
@@ -48,7 +45,6 @@ export function startWalker() {
       step -= quantity + walkerWidth
     }
   }
-
   function start() {
     if(finish){
       styleWalker.changeOfPositionHorizontal(styleWalker.staticPosition)
@@ -61,59 +57,11 @@ export function startWalker() {
     checkOnTheBrink()
     setTimeout(() => start(), 1000 - levelAp)
   }
-
   start()
 }
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max))
-}
-
 // Shot
-
-import {styleTarget} from './Target.js'
-const $btnShot = document.querySelector('.js-button_shot')
-
-$btnShot.onclick = () => mergerCoords({
-  target: styleTarget.$el, 
-  walker: styleWalker.$el
-})
-
-window.addEventListener('keydown', event => {
-  if(event.code === 'Space'){
-    mergerCoords({
-      target: styleTarget.$el, 
-      walker: styleWalker.$el
-    })
-  }
-})
-
-function getCoords(elem) {
-  let box = elem.getBoundingClientRect()
-  return box.top + box.left
-}
-
-function changeBackground(element, color) {
-  element.style.background = color
-}
-
-// Сreating a new node in DOM
-function createNode(option){
-  const element = option.element
-  const beforeThisElement = option.beforeThisElement
-  const newClassElement = option.classElement
-  const newTextInnerElement = option.textInnerElement
-  element.className = newClassElement
-  element.innerHTML = newTextInnerElement
-  beforeThisElement.append(element)
-}
-
-function changeNode(option) {
-  const element = option.element
-  const newTextInnerElement = option.textInnerElement
-  element.innerHTML = newTextInnerElement
-}
-function mergerCoords(element){ 
+export function mergerCoords(element){ 
   const background = changeBackground
   const field = styleField.$el
   const targetCoords = getCoords(element.target)
