@@ -1,4 +1,4 @@
-//  Overall game functionality
+// Launch of game functionality
 
 import {styleField} from './Field.js'
 import {styleWalker} from './Walker.js'

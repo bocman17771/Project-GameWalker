@@ -1,5 +1,5 @@
 import {startWalker, mergerCoords} from './startGame.js'
-import {stepNext, stepPrev} from './targetManagement.js'
+import {stepNext, stepPrev} from './aiming.js'
 import {styleTarget} from './Target.js'
 import {styleWalker} from './Walker.js'
 
