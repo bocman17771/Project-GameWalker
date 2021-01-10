@@ -5,6 +5,7 @@ import {styleWalker} from './Walker.js'
 
 // Button keyboard event
 window.addEventListener('keydown', event => {
+  event.preventDefault()
   // Start game
   if(event.code === 'NumpadEnter') {
     startWalker()
