@@ -6,5 +6,5 @@ export const styleTarget = new Style({
   outline: 'solid #ffc107 1px',
   background: '#ffc107',
   position: 'absolute',
-  staticPosition: 100,
+  staticPosition: 90,
 })

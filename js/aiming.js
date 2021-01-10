@@ -7,21 +7,21 @@ const targetWidth = styleTarget.$el.clientWidth
 const targetHeight = styleTarget.$el.clientHeight
 let quantityHorizontal = styleTarget.staticPosition
 let quantityVertical = styleTarget.staticPosition
-
+const quantity = 30
 
 export function stepNext (arrow) {
   if(arrow === 'ArrowRight'){
     if(quantityHorizontal >= fieldWidth - targetWidth){
       return
     }
-    quantityHorizontal += 10
+    quantityHorizontal += quantity
     styleTarget.changeOfPositionHorizontal(quantityHorizontal)
   }
   if(arrow === 'ArrowDown'){
     if(quantityVertical >= fieldHeight - targetHeight){
       return
     }
-    quantityVertical += 10
+    quantityVertical += quantity
     styleTarget.changeOfPositionVertical(quantityVertical)
   }
 }
@@ -31,14 +31,14 @@ export function stepPrev (arrow) {
     if(quantityHorizontal <= 0){
       return
     }
-    quantityHorizontal -= 10
+    quantityHorizontal -= quantity
     styleTarget.changeOfPositionHorizontal(quantityHorizontal)
   }
   if(arrow === 'ArrowUp'){
     if(quantityVertical <= 0){
       return
     }
-    quantityVertical -= 10
+    quantityVertical -= quantity
     styleTarget.changeOfPositionVertical(quantityVertical)
   }
 }
