@@ -11,6 +11,7 @@ export class Style extends Element{
     this.$el.style.background = options.background
     this.$el.style.backgroundImage = options.backgroundImage
     this.$el.style.backgroundSize = options.backgroundSize
+    this.$el.style.backgroundPosition = options.backgroundPosition
     this.$el.style.padding = options.padding + 'px'
     this.$el.style.margin = options.margin
     this.$el.style.marginBottom = options.marginBottom
