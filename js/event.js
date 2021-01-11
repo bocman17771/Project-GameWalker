@@ -12,13 +12,14 @@ window.addEventListener('keydown', event => {
       startWalker()
     }
   }
-  
   // Shot 
-  if(event.code === 'Space'){
-    mergerCoords({
-      target: styleTarget.$el, 
-      walker: styleWalker.$el
-    })
+  if(blockStart){
+    if(event.code === 'Space'){
+      mergerCoords({
+        target: styleTarget.$el, 
+        walker: styleWalker.$el
+      })
+    }
   }
   // Arrows
   if(event.code === 'ArrowUp' || 'ArrowLeft'){
