@@ -38,8 +38,8 @@
 .catalog__list .button:hover{
   cursor: default;
 }
-.target{
+/* .target{
   background-image: url("../img/svg/target2.svg");
   background-position: center;
   background-size: 100%;
-}
+} */
