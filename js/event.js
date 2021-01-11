@@ -2,14 +2,17 @@ import {startWalker, mergerCoords} from './startGame.js'
 import {stepNext, stepPrev} from './aiming.js'
 import {styleTarget} from './Target.js'
 import {styleWalker} from './Walker.js'
-
+import {blockStart} from './startGame.js'
 // Button keyboard event
 window.addEventListener('keydown', event => {
   event.preventDefault()
   // Start game
-  if(event.code === 'NumpadEnter') {
-    startWalker()
+  if(!blockStart){
+    if(event.code === 'NumpadEnter') {
+      startWalker()
+    }
   }
+  
   // Shot 
   if(event.code === 'Space'){
     mergerCoords({

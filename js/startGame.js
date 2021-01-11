@@ -3,9 +3,10 @@
 import {styleField} from './Field.js'
 import {styleWalker} from './Walker.js'
 import {getRandomInt, getCoords, changeBackground, createNode, changeNode} from './mixin.js'
-
+export let blockStart = false 
 let level = 1
 let finish = false
+
 
 // Starts game
 export function startWalker() {
@@ -16,6 +17,7 @@ export function startWalker() {
   const quantity = 30
   let levelAp = level * 100 - 100
   let step = styleWalker.staticPosition
+  blockStart = true
   function checkOnTheRandom(random) {
     if(random === 0){
       step += quantity
@@ -81,6 +83,7 @@ export function mergerCoords(element){
     })
     background(field, 'green')
     finish = true
+    blockStart = false
     setTimeout(() => {
       textWin.remove()
       background(field, '')
