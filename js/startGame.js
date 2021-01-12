@@ -1,8 +1,7 @@
 // Launch of game functionality
-
 import {styleField} from './Field.js'
 import {styleWalker} from './Walker.js'
-import {getRandomInt, getCoords, changeBackground, createNode, changeNode} from './mixin.js'
+import {getRandomInt, getCoords, changeBackground, createNode, changeNode, removeNode} from './mixin.js'
 export let blockStart = false 
 let level = 1
 let finish = false
@@ -14,10 +13,15 @@ export function startWalker() {
   const walkerHeight = styleWalker.$el.clientHeight
   const fieldWidth = styleField.$el.clientWidth
   const fieldHeight = styleField.$el.clientHeight
+  const field = styleField.$el
+  const background = changeBackground
   const quantity = 30
   let levelAp = level * 100 - 100
   let step = styleWalker.staticPosition
+  removeNode(document.querySelector('.textWin'))
+  background(field, '')
   blockStart = true
+  
   function checkOnTheRandom(random) {
     if(random === 0){
       step += quantity
@@ -69,10 +73,10 @@ export function mergerCoords(element){
   const targetCoords = getCoords(element.target)
   const walkerCoords = getCoords(element.walker)
   if (targetCoords === walkerCoords){
-    const textWin = document.createElement('span')
+    const $el = document.createElement('span')
     level++
     createNode({
-      element: textWin,
+      element: $el,
       textInnerElement: 'Win!!!',
       classElement: 'textWin',
       beforeThisElement: field
@@ -85,8 +89,10 @@ export function mergerCoords(element){
     finish = true
     blockStart = false
     setTimeout(() => {
-      textWin.remove()
-      background(field, '')
+      changeNode({
+        element: $el,
+        textInnerElement: 'Жми старт!'
+      })
     }, 1000) 
     return
   }

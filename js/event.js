@@ -40,15 +40,19 @@ window.addEventListener('click', event => {
   const $btnShot = document.querySelector('.js-button_shot')
 
   // Start
-  if(event.target === $btnStart){
-    startWalker()
+  if(!blockStart){
+    if(event.target === $btnStart){
+      startWalker()
+    }
   }
   // Shot
-  if(event.target === $btnShot){
-    mergerCoords({
-      target: styleTarget.$el, 
-      walker: styleWalker.$el
-    })
+  if(blockStart){
+    if(event.target === $btnShot){
+      mergerCoords({
+        target: styleTarget.$el, 
+        walker: styleWalker.$el
+      })
+    }
   }
   // Arrows
   if(event.target === $btnLeft){

@@ -25,8 +25,12 @@ function changeNode(option) {
   element.innerHTML = newTextInnerElement
 }
 
+function removeNode (option) {
+  !option ? console.log(false) : option.remove()
+}
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max))
 }
 
-export {getRandomInt, getCoords, changeBackground, createNode, changeNode}
+export {getRandomInt, getCoords, changeBackground, createNode, changeNode, removeNode}
