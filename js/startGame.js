@@ -3,6 +3,7 @@ import {styleField} from './Field.js'
 import {styleWalker} from './Walker.js'
 import {getRandomInt, getCoords, changeBackground, createNode, changeNode, removeNode} from './mixin.js'
 export let blockStart = false 
+const maxLvl = 10
 let level = 1
 let finish = false
 
@@ -14,14 +15,12 @@ export function startWalker() {
   const fieldWidth = styleField.$el.clientWidth
   const fieldHeight = styleField.$el.clientHeight
   const field = styleField.$el
-  const background = changeBackground
   const quantity = 30
   let levelAp = level * 100 - 100
   let step = styleWalker.staticPosition
   removeNode(document.querySelector('.textWin'))
-  background(field, '')
+  changeBackground(field, '')
   blockStart = true
-  
   function checkOnTheRandom(random) {
     if(random === 0){
       step += quantity
@@ -68,7 +67,6 @@ export function startWalker() {
 
 // Shot
 export function mergerCoords(element){ 
-  const background = changeBackground
   const field = styleField.$el
   const targetCoords = getCoords(element.target)
   const walkerCoords = getCoords(element.walker)
@@ -85,17 +83,30 @@ export function mergerCoords(element){
       element: document.querySelector('.js-thisLvl'),
       textInnerElement: level
     })
-    background(field, 'green')
+    changeBackground(field, 'green')
     finish = true
     blockStart = false
-    setTimeout(() => {
-      changeNode({
+
+    if(level >= maxLvl){
+      const $el = document.createElement('span')
+      level = 1
+      removeNode(document.querySelector('.textWin'))
+      createNode({
         element: $el,
-        textInnerElement: 'Жми старт!'
+        textInnerElement: 'Игра окончена! Чтобы начать заново, жми старт.',
+        classElement: 'textWin',
+        beforeThisElement: field
       })
-    }, 1000) 
+    }else {
+      setTimeout(() => {
+        changeNode({
+          element: $el,
+          textInnerElement: 'Жми старт!'
+        })
+      }, 1000) 
+    }
     return
   }
-  background(field, 'red')
-  setTimeout(() => background(field, ''), 500)
+  changeBackground(field, 'red')
+  setTimeout(() => changeBackground(field, ''), 500)
 }
