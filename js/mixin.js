@@ -26,7 +26,7 @@ function changeNode(option) {
 }
 
 function removeNode (option) {
-  !option ? console.log(false) : option.remove()
+  !option ? true : option.remove()
 }
 
 function getRandomInt(max) {
